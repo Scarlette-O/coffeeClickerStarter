@@ -3,6 +3,7 @@ const data = window.data;
 
 // Make your References to the two DOM nodes
 
+
 // Create a reference to the element who's ID is 'big_coffee and call it bigCoffee
 
 // Create a reference to the element who's ID is 'producer_container' and call it producerContainer
@@ -13,13 +14,18 @@ const data = window.data;
 
 function updateCoffeeView(coffeeQty) {
   // Create a reference to the element who's ID is 'coffee_counter'
+  const coffee_counter = document.getElementById("coffee_counter");
   // Set the innerText of that element to be the coffeeQty passed into this function
+  coffee_counter.innerText = coffeeQty
 }
 
 function clickCoffee(data) {
   // Increment the data object's (passed into this function) coffee property by one
+  data.coffee ++;
   // call the updateCoffeeView function and pass it the newly updated data.coffee property
+  updateCoffeeView(data.coffee);
   // call the renderProducers function and pass it the data object
+  renderProducers(data);
 }
 
 /**************
@@ -28,7 +34,9 @@ function clickCoffee(data) {
 
 function unlockProducers(producers, coffeeCount) {
   // loop through the producers array passed into the function
+  
   // for each producer, if the coffeeCount (passed in) is greater than or equal
+
   // to half the producer's price, reassign the producers.unlocked property to equal true
 }
 
