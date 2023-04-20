@@ -40,9 +40,9 @@ function unlockProducers(producers, coffeeCount) {
   for (let i = 0; i < producers.length; i++){
       if(coffeeCount >= (producers[i].price / 2)){  
           producers[i].unlocked = true;
-
       } 
   }
+  
   return producers;
 }
 
@@ -51,11 +51,13 @@ function getUnlockedProducers(data) {
   // use the Array.prototype.filter() method  
   // filter through the data.producers property, and return an array with only the producers whose
   // unlocked property is true
+  
   return data.producers.filter (producer => producer.unlocked === true);
 }
 
 // You do not need to edit this function 
 function makeDisplayNameFromId(id) {
+  
   return id
     .split("_")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
